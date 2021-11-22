@@ -60,7 +60,7 @@ module.exports = {
         //     'SwitchCase': 1
         // }], // 强制使用一致的缩进
         'indent': 'off',
-        'vue/script-indent': ['error', 4, {'baseIndent': 1}
+        'vue/script-indent': ['error', 2, {'baseIndent': 1}
         ],
         'jsx-quotes': [2, 'prefer-single'], // 强制在 JSX 属性中一致地使用双引号或单引号
         'key-spacing': [2, {
