@@ -1,9 +1,10 @@
-'use strict'
-const path = require('path')
+const path = require('path');
+
 function resolve(dir) {
-  return path.join(__dirname, dir)
+  return path.join(__dirname, dir);
 }
-const port = process.env.port || process.env.npm_config_port || 9520 // dev port
+const port = process.env.port || process.env.npm_config_port || 9520; // dev port
+
 module.exports = {
   /**
    * You will need to set publicPath if you plan to deploy your site under a sub path,
@@ -12,18 +13,18 @@ module.exports = {
    * In most cases please use '/' !!!
    * Detail: https://cli.vuejs.org/config/#publicpath
    */
-  publicPath: process.env.NODE_ENV === 'development' ? './' : './',
-  lintOnSave: false,
-  outputDir: '../axios_demo/pack_demo',
-  assetsDir: 'static',
-  indexPath: 'index.html',
-  productionSourceMap: false,
-  devServer: {
-    port: port,
-    open: true,
-    overlay: {
-      warnings: false,
-      errors: true
+  'publicPath': process.env.NODE_ENV === 'development' ? './' : './',
+  'lintOnSave': false,
+  'outputDir': '../axios_demo/pack_demo',
+  'assetsDir': 'static',
+  'indexPath': 'index.html',
+  'productionSourceMap': false,
+  'devServer': {
+    'port': port,
+    'open': true,
+    'overlay': {
+      'warnings': false,
+      'errors': true
     }
     // proxy: {
     //   '/api': {
@@ -40,30 +41,30 @@ module.exports = {
     // }
     // proxy: 'http://testlocal.wmnetwork.cc'
   },
-  configureWebpack: {
-    resolve: {
-      alias: {
+  'configureWebpack': {
+    'resolve': {
+      'alias': {
         '@': resolve('src')
       }
     }
   },
-  chainWebpack: config => {
+  'chainWebpack': config => {
     // GraphQL Loader
     config.module
-        .rule('worker-loader')
-        .test(/\.worker\.js$/)
-        .use('worker-loader')
-        .loader('worker-loader')
-        .end()
+      .rule('worker-loader')
+      .test(/\.worker\.js$/)
+      .use('worker-loader')
+      .loader('worker-loader')
+      .end();
   },
-  css: {
-    extract: true,
-    sourceMap: false,
-    loaderOptions: {
-      scss: {
+  'css': {
+    'extract': true,
+    'sourceMap': false,
+    'loaderOptions': {
+      'scss': {
         // 在 sass-loader v8 中，这个选项名是 "prependData"
-        additionalData: `@import "~@/styles/variables.scss";`
+        'additionalData': '@import "~@/styles/variables.scss";'
       }
     }
   }
-}
+};

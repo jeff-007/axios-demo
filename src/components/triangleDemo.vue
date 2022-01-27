@@ -104,7 +104,7 @@
 
             // this.initTank()
             // this.initPopulation3D()
-            this.initObjFile()
+            // this.initObjFile()
         },
         methods: {
             // 加载OBJ模型demo

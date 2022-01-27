@@ -56,10 +56,10 @@ module.exports = {
             'after': true
         }], // 强制 generator 函数中 * 号周围使用一致的空格
         'handle-callback-err': [2, '^(err|error)$'], // 要求回调函数中有容错处理
-        // 'indent': [2, 2, {
-        //     'SwitchCase': 1
-        // }], // 强制使用一致的缩进
-        'indent': 'off',
+        'indent': [0, 2, {
+            'SwitchCase': 1
+        }], // 强制使用一致的缩进
+        // 'indent': 'off',
         'vue/script-indent': ['error', 2, {'baseIndent': 1}
         ],
         'jsx-quotes': [2, 'prefer-single'], // 强制在 JSX 属性中一致地使用双引号或单引号

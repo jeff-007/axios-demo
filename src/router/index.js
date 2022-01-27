@@ -40,7 +40,18 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   console.log('route guiding')
-  next()
+  if ($wm_page.interceptor) {
+    let res = $wm_page.interceptor(to);
+    if (res) {
+      next();
+      // 返回false则中断
+    } else {
+      next(false);
+    }
+  } else {
+    window.routerLeave && window.routerLeave(from);
+    next();
+  }
 })
 
 router.afterEach((to, from) => {

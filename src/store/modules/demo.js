@@ -5,7 +5,8 @@ const state = {
   toDos: [
     { id: 1, text: '...', done: true },
     { id: 2, text: '...', done: false }
-  ]
+  ],
+  wm_inner_route_query: {}
 }
 
 const getters = {
@@ -16,6 +17,9 @@ const getters = {
   // this.$store.getters.getTodoById(2)
   getTodoById: (state, getters) => (id) => {
     return state.toDos.find(todo => todo.id === id)
+  },
+  getInnerRouteQuery(state) {
+    return state.wm_inner_route_query
   }
 }
 
@@ -25,6 +29,10 @@ const mutations = {
   },
   asyncMutation: (state, val) => {
     state.asyncText = val
+  },
+  setInnerRouteQuery: (state, val) => {
+    // Object.assign(state.wm_inner_route_query , val)
+    state.wm_inner_route_query = val
   }
 }
 
