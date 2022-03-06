@@ -98,7 +98,7 @@
             // this.initSound()
             // this.initDrag()
             // this.initPointer()
-            // this.initWater()
+            this.initWater()
             // this.initScreenshot()
             // this.initPopulation()
 
@@ -955,7 +955,7 @@
                     renderer.setSize(window.innerWidth, window.innerHeight);
                     // ACESFilmicToneMapping常量定义了WebGLRenderer中色调映射的曝光级别toneMapping的属性
                     // 这个属性用于在普通计算机显示器或者移动设备屏幕等低动态范围介质上，模拟、逼近高动态范围图像（HDR）效果
-                    renderer.toneMapping = Three.ACESFilmicToneMapping;
+                    // renderer.toneMapping = Three.ACESFilmicToneMapping;
                     container.appendChild(renderer.domElement);
 
                     scene = new Three.Scene();
@@ -989,7 +989,6 @@
                     );
 
                     water.rotation.x = -Math.PI / 2;
-                    console.log(water)
                     scene.add(water);
 
 
@@ -3611,7 +3610,7 @@
                 }
                 function initState() {
                     const stats = new Stats();
-                    stats.showPanel(0);
+                    stats.showPanel(0); // 0:fps 1:ms 2:mb 3+:custom
                     document.body.appendChild(stats.dom)
                     return stats
                 }
