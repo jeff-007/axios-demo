@@ -8,6 +8,7 @@
     "lint": "eslint --ext .js,.vue src --fix"
   },
   "dependencies": {
+    "@tweenjs/tween.js": "^21.0.0",
     "core-js": "^3.6.5",
     "element-ui": "^2.13.2",
     "physijs": "^1.0.4",
